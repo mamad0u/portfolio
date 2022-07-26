@@ -10,23 +10,46 @@
   
 <div class="acceuil">
 <header>
-    <div class="logo">logo</div>
+    <div class="logo"><img src="./assets/logo.svg" alt=""></div>
     <nav>
       <a href="#projets">Projets</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 <div class="nom">
-  
+   
 <h1 :class="{'div-anim': divanim}">Mamadou Sylla <span>Devellopeur web</span> </h1>
+<div class="info-nom" :class="{'div-anim2': divanim2}">
+  <p>P</p>
+  <p>O</p>
+  <p>R</p>
+  <p>T</p>
+  <p>F</p>
+  <p>O</p>
+  <p>L</p>
+  <p>I</p>
+  <p>O</p>
+  <p style="padding-top:10px">2</p>
+  <p>0</p>
+  <p>2</p>
+  <p>2</p>
 </div>
 </div>
-<!--
- <div class="info" data-aos="fade-left">
-  <img src="./assets/logo.png" alt="">
-<b><p>Bonjour je m'apelle Mamadou Sylla, etudiant a Digital Campus. Développeur et intégrateur sur Bordeaux. Sérieux sociable j’adore réaliser de belle choses je serais ravis de participer a la réalisation de vos projets.</p></b>
+<div class="logo-anim">
+  <img src="./assets/logo.svg" alt="">
+</div>
 </div>
 
+ <div class="info" data-aos="fade-left">
+  <div class="info-img">
+  <img src="./assets/logo.png" alt=""  data-speed="10"  v-on="moovimg()">
+  </div>
+  <div class="info-txt">
+<b><p>Bonjour je m'apelle Mamadou Sylla, etudiant a Digital Campus. Développeur et intégrateur sur Bordeaux. Sérieux sociable j’adore réaliser de belle choses je serais ravis de participer a la réalisation de vos projets.</p></b>
+
+  </div>
+</div>
+<!--
   data-aos="fade-left" data-aos-delay="400" data-aos-duration="600"
   :class="{'animproject': animproject}" v-on:click="clickproject()">
 -->
@@ -47,8 +70,8 @@
   <p v-show="projet.animproject" >{{ projet.description }} </p>
   </div> 
   <div class="bottom">
-  <p data-aos="fade-up" data-aos-delay="400" data-aos-duration="600"> {{ projet.techno }}</p>
- <a v-bind:href="projet.link" data-aos="fade-up" data-aos-delay="400" data-aos-duration="600"> <img src="./assets/github.png" alt=""></a>
+  <p data-aos="fade-up" data-aos-delay="200" data-aos-duration="600"> {{ projet.techno }}</p>
+ <a v-bind:href="projet.link" data-aos="fade-up" data-aos-delay="200" data-aos-duration="600"> <img src="./assets/github.png" alt=""></a>
   </div>
  
   </div>
@@ -58,9 +81,11 @@
 <div id="contact">
 <h3 data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">Contact</h3>
 <div class="txt-contact">
-<b><p data-aos="fade-up" data-aos-delay="300" data-aos-duration="700">Une idée de projet?</p></b>
+  <div class="">
+    <b><p data-aos="fade-up" data-aos-delay="300" data-aos-duration="700">Une idée de projet?</p></b>
 <b><p data-aos="fade-up" data-aos-delay="500" data-aos-duration="700">Contactez moi!</p></b>
-
+  </div>
+<p class="mail" data-aos="fade-up" data-aos-delay="500" data-aos-duration="700">mamad33sylla@gmail.com</p>
 </div>
 
 
@@ -89,6 +114,7 @@ export default {
         divanim:false,
         voir:false,
         scroll:false,
+        divanim2:false,
  
 
         loadPage:{
@@ -99,7 +125,7 @@ export default {
           src:  require("./assets/symfony.png"),
           alt: "Image 1",
           titre:"Symfony",
-          description:"",
+          description:"fsehshstjstrjstrt'<br>'snrtnsrnrsnsnrssr",
           link:"httpsveoiovi",
           techno:"vueJS",
           client:"Fictif",
@@ -149,6 +175,19 @@ export default {
          projet.animproject = false
 
       }
+      },
+      moovimg(){
+        document.addEventListener("mousemove", parallax);
+        function parallax(e){
+          document.querySelectorAll(".info-img img").forEach(function(move){
+    
+            var moving_value = move.getAttribute("data-speed");
+            var x = (e.clientX * moving_value) / -250;
+            var y = (e.clientY * moving_value) / -250;
+    
+            move.style.transform = "translateX(" + x + "px) translateY(" + y + "px)";
+          });
+        }
       }
 		},
     mounted() {
@@ -212,14 +251,19 @@ setTimeout(() => {
 
 setTimeout(() => {
    this.pageindex = true
-}, 10000);
+}, 8000);
 
 setTimeout(() => {
    this.divanim = true
    this.voir = true
    this.scroll = true
-}, 10800);
+}, 9500);
 
+setTimeout(() => {
+   
+   this.divanim2 = true
+ 
+}, 10500);
  
   }
 
@@ -254,7 +298,7 @@ body{
     width: 0;
     background: transparent;
 }
-
+/* 
 .scrollbar {
     position: fixed;
     top: 0;
@@ -278,6 +322,8 @@ body{
     opacity: 0;
   display: none;
 }
+*/
+
 @keyframes slidein {
   from {
      background-color: #dfd3c3;
@@ -337,14 +383,13 @@ overflow-y: hidden;
 
   .page{
     width: 100%;
-    height: 500vh;
     background-color: #222222;
     position: absolute;
     left: 0;
     top:0;
 transform: skewX(35deg);
  transform: translateY(100%);
-    transition:  transform .7s;
+    transition:  transform 1.2s;
     overflow: hidden;
   }
   .acceuil{
@@ -356,10 +401,17 @@ transform: skewX(35deg);
   .nom{
         display: flex;
     align-items: center;
-    height: 100vh;
+    height: calc(100vh - 18.4px);
      width: 90%;
     margin: 0px auto;
+    justify-content: space-between;
+    position: relative;
   }
+
+.logo img{
+  width: 70px;
+}
+
   header{
     display: flex;
     width:90%;
@@ -385,15 +437,35 @@ transform: skewX(35deg);
     transition: opacity 1s ,transform 1s, font-syse .5s;
    font-family: 'Montserrat', sans-serif;
     font-size: 7vw;
-    line-height: 1.4em;
-    font-size: clamp(50px, 7vw, 200px);
+    line-height: 1.8em;
+    font-size: clamp(35px, 7vw, 200px);
     }
     h1 span{
       display: block;
     }
+    .info-nom{
+      position: absolute;
+       color: #dfd3c3;
+    opacity: 0;
+    transform: translate(0px, 30px);
+    transition: opacity 1.2s ,transform 1.2s, font-syse .5s;
+   font-family: 'Montserrat', sans-serif;
+   text-transform: uppercase;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   right: 7px;
+   font-size:14px ;
+
+    }
 .div-anim{
      opacity: 1;
      transform: translate(0px, -80px);
+}
+.div-anim2{
+     opacity: 1;
+     transform: translate(0px, -70px);
 }
   .indexpage{
   transform: translateY(0%) skewX(0deg);
@@ -440,17 +512,19 @@ transform: skewX(35deg);
   .info{
     width: 80%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    flex-direction: column;
     margin: 0 auto;
+    margin-bottom: 150px;
   }
+ 
    .info p{
      color: #dfd3c3;
      font-size: 25px;
      font-family: 'Montserrat', sans-serif;
      text-align: center;
-     margin: 20px 0 200px;
-     width: 50%;
+     margin-top: 20px;
    }
 .projets {
   width:100%;
@@ -514,8 +588,10 @@ h2,h3{
   height: 320px;
   text-align: center;
   display: flex;
-  justify-content: center;align-items: center;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
+  width: 100px;
 }
 .animproject{
   display: contents !important;
@@ -532,18 +608,33 @@ h2,h3{
     50%{ margin-top:15px;  }
     100%{ margin-top:-15px;  }
     }
+    #contact {
+      padding-bottom: 100px;
+    }
 #contact .txt-contact{
   padding: 40px 0;
   width: 80%;
   margin: 0 auto;
 }
 #contact p{
-  font-size: 60px;
+  font-size: 6vw;
   color: #dfd3c3;
   font-family: 'Montserrat', sans-serif;
 }
 
+#contact .mail{
+font-size: 4vw;
+padding: 15px 0;
+}
+@media all and (min-width:500px){
+
+}
+
 @media all and (min-width:600px){
+#contact .mail{
+font-size: 4vw;
+padding: 20px 0;
+}
    .load-page p {
     font-size: 30px;
   }
@@ -565,8 +656,37 @@ h2,h3{
 }
 }
 @media all and (min-width:800px){
+
+#contact .mail{
+font-size: 4vw;
+padding: 30px 0;
+}
 .projet .mid img{
   width: 150px;
+}
+
+ .info{
+    justify-content: center;
+    align-items: center;
+    flex-direction: initial;
+    margin: 0 auto;
+     margin-top: 0px;
+    margin-bottom: 200px;
+    
+  }
+ .info-img{
+    width: 50%;
+  }
+  
+  .info-txt{
+    width: 50%;
+
+  }
+
+}
+@media all and (min-width:1024px){
+  .projet .mid{
+  height: 350px;
 }
 }
 
