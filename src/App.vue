@@ -238,7 +238,7 @@ function typewriter(word, index){
         setTimeout(() => {
             title.innerHTML += `<span>${word[index]}</span>`
             typewriter(txt, index + 1)
-        }, 200);
+        }, 170);
     }
     
 }
@@ -257,7 +257,7 @@ setTimeout(() => {
    this.divanim = true
    this.voir = true
    this.scroll = true
-}, 9500);
+}, 7500);
 
 setTimeout(() => {
    
@@ -295,9 +295,13 @@ body{
     overflow-y: scroll;
 }
 ::-webkit-scrollbar {
-    width: 0;
-    background: transparent;
+    width: 15px;
+    background: #222222;
 }
+::-webkit-scrollbar-thumb{
+  background-color: #dfd3c3;
+  border-radius: 10px;
+  }
 /* 
 .scrollbar {
     position: fixed;
@@ -361,6 +365,7 @@ transition: transform 1s;
 overflow: hidden;
 overflow-x: hidden;
 overflow-y: hidden;
+scroll-behavior: unset;
 
 }
  .load-page p {
@@ -427,8 +432,8 @@ transform: skewX(35deg);
   nav a{
     padding: 0 10px;
     text-decoration: none;
-    color:#dfd3c3
-  }
+    color:#dfd3c3;
+    font-size: 18px;  }
 
   h1{
     color: #dfd3c3;
@@ -592,6 +597,7 @@ h2,h3{
   align-items: center;
   cursor: pointer;
   width: 100px;
+  word-break: break-word;
 }
 .animproject{
   display: contents !important;
