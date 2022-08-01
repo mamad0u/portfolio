@@ -7,4 +7,4 @@ const app = createApp(App)
 
 app.AOS = new AOS.init({ disable: "phone" });
 
-app.use(AOS).mount('#app')
+app.use(AOS.refresh()).mount('#app')
