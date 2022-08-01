@@ -5,7 +5,7 @@
 </div>
   <div class="scrollbar" :class="{ 'scroll': scroll}"></div>
     <div class="clickScrollbar" :class="{ 'scroll': scroll}"></div>
-<div class="page"  :class="{ 'indexpage': pageindex, 'pagebig': pagebig,'pagebigh': pagebigh,} ">
+<div class="page"  :class="{ 'indexpage': pageindex, 'pagebig': pagebig,'pagebigh': pagebigh, 'nn': nn} ">
 <div class="acceuil">
 <header>
     <div class="logo"><img src="./assets/logo.svg" alt=""></div>
