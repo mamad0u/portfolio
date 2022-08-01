@@ -15,7 +15,7 @@
     </nav>
   </header>
 <div class="nom">
-<h1 :class="{'div-anim': divanim}">MAMADOU SYLLA<span>Devellopeur web</span> </h1>
+<h1 :class="{'div-anim': divanim}">MAMADOU SYLLA<span>Devellopeur web</span></h1>
 <div class="info-nom" >
  <a href="https://github.com/mamad0u" :class="{'div-anim2': divanim2}" target="_blank">
   <img src="./assets/github.webp" alt=""  >
