@@ -28,9 +28,6 @@
  </a>
 </div>
 </div>
-<div class="logo-anim">
-  <img src="./assets/logo.svg" alt="">
-</div>
 </div>
  <div class="info" data-aos="fade-left">
   <div class="info-img">
