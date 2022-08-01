@@ -77,7 +77,9 @@
 </div>
 </div>
 </template>
-<script >
+<script>
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 export default {
 		name: 'mon-alert',
 		props: {
@@ -154,6 +156,7 @@ export default {
        
 		},
     mounted() {
+        AOS.init()
     
         document.addEventListener("mousemove", parallax);
                function parallax(e){
