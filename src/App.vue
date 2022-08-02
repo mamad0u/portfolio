@@ -15,7 +15,7 @@
     </nav>
   </header>
 <div class="nom">
-<h1 :class="{'div-anim': divanim}">MAMADOU SYLLA<span>Devellopeur web</span></h1>
+<h1 :class="{'div-anim': divanim}">MAMADOU SYLLA<span>Developpeur web</span></h1>
 <div class="info-nom" >
  <a href="https://github.com/mamad0u" :class="{'div-anim2': divanim2}" target="_blank">
   <img src="./assets/github.webp" alt=""  >
@@ -34,7 +34,7 @@
   <img src="./assets/mamadou.webp" alt=""  data-speed="10" >
   </div>
   <div class="info-txt">
-<b><p>Mamadou Sylla, etudiant a Digital Campus. Développeur et intégrateur sur Bordeaux. Sérieux sociable j’adore réaliser de belle choses je serais ravis de participer a la réalisation de vos projets.</p></b>
+<b><p>Mamadou Sylla, étudiant à Digital Campus. Développeur et intégrateur sur Bordeaux. Sérieux sociable j’adore réaliser de belle choses je serais ravis de participer a la réalisation de vos projets.</p></b>
   </div>
 
 </div>
@@ -66,7 +66,7 @@
 <div class="txt-contact">
   <div class="">
     <b><p data-aos="fade-up" data-aos-delay="300" data-aos-duration="700">Une idée de projet?</p></b>
-<b><p data-aos="fade-up" data-aos-delay="500" data-aos-duration="700">Contactez moi!</p></b>
+<b><p data-aos="fade-up" data-aos-delay="500" data-aos-duration="700">Contactez-moi!</p></b>
   </div>
 <p class="mail" data-aos="fade-up" data-aos-delay="500" data-aos-duration="700">mamadousylla.dev@gmail.com</p>
 </div>
@@ -101,7 +101,7 @@ export default {
           src:  require("./assets/symfony.webp"),
           alt: "Image 1",
           titre:"Symfony",
-          description:"Projet app web de musique permettant d'écouter des musiques et des albums ajoutés par des utilisateurs grace a un CRUD",
+          description:"Projet app web de musique permettant d'écouter des musiques et des albums ajoutés par des utilisateurs grâce à un CRUD",
           link:"https://github.com/carlos-v278/player-symfony",
           techno:"symfony",
           client:"Fictif",
@@ -114,7 +114,7 @@ export default {
           src:  require("./assets/boulangerie.webp"),
           alt: "Image 1",
           titre:"La boulangerie",
-          description:"Projet de refonte d'un site existant sur WordPress en créen un thème WordPress ",
+          description:"Projet de refonte d'un site existant sur WordPress en créant un thème WordPress ",
           link:"https://github.com/mamad0u/la-boulangerie-theme",
           techno:"WordPress",
           client:"Fictif",
@@ -127,7 +127,7 @@ export default {
           src:  require("./assets/quizy.webp"),
           alt: "Image 1",
           titre:"Quizy",
-          description:"Projet création d'un quiz pour des classes de collège en histoire et en géographie avec vue js  ",
+          description:"Projet de création d'un quiz pour des classes de collège en histoire et en géographie avec vue js  ",
           link:"https://github.com/mamad0u/quiz-vue-js-front",
           techno:"Vuejs",
           client:"Fictif",
