@@ -15,7 +15,7 @@
     </nav>
   </header>
 <div class="nom">
-<h1 :class="{'div-anim': divanim}">MAMADOU SYLLA<span>Developpeur web</span></h1>
+<h1 :class="{'div-anim': divanim}">MAMADOU SYLLA<span>Développeur web</span></h1>
 <div class="info-nom" >
  <a href="https://github.com/mamad0u" :class="{'div-anim2': divanim2}" target="_blank">
   <img src="./assets/github.webp" alt=""  >
@@ -34,7 +34,7 @@
   <img src="./assets/mamadou.webp" alt=""  data-speed="10" >
   </div>
   <div class="info-txt">
-<b><p>Mamadou Sylla, étudiant à Digital Campus. Développeur et intégrateur sur Bordeaux. Sérieux sociable j’adore réaliser de belle choses je serais ravis de participer a la réalisation de vos projets.</p></b>
+<b><p>Mamadou Sylla, étudiant à Digital Campus. Développeur et intégrateur sur Bordeaux. Sérieux, sociable, j’adore réaliser de belles choses. je serais ravi de participer à la réalisation de vos projets.</p></b>
   </div>
 
 </div>
